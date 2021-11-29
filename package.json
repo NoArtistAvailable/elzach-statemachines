@@ -1,0 +1,17 @@
+{
+  "name": "com.elzach.statemachine",
+  "description": "Simple and customizable base for statemachines",
+  "author": { "name":"elZach", "email":"dontmessageme","url":"-" },
+  "version": "0.0.1",
+  "unity": "2020.3",
+  "unityRelease":"0a1",
+  "displayName": "elzach StateMachine",
+  "keywords": [ "unity" ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/felix.reinemann/elzach-extensions"
+  },
+  "dependencies": {
+	"com.elzach.extensions": "0.0.1"
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "elZach.StateMachine.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:49636072cfef7b749a929c23dee6dce9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
