@@ -12,10 +12,10 @@ namespace elZach.Common
         public event Action onEnter, onExit;
         public List<StateMachine.Link> links;
 
-        public void Enter() => onEnter?.Invoke();
-        public void Exit() => onExit?.Invoke();
+        public virtual void Enter() => onEnter?.Invoke();
+        public virtual void Exit() => onExit?.Invoke();
 
-        public void Clear()
+        public virtual void Clear()
         {
             onEnter = null;
             onExit = null;
