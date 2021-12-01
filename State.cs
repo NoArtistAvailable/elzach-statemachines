@@ -24,10 +24,11 @@ namespace elZach.Common
     
 #if UNITY_EDITOR
 
-    [CustomEditor(typeof(State),true)]
+    [CustomEditor(typeof(State), true)]
     public class StateEditor : Editor
     {
         private StateMachine _parent;
+
         private StateMachine parent
         {
             get
@@ -39,13 +40,24 @@ namespace elZach.Common
                     path.Remove(path.Length - t.name.Length, t.name.Length);
                     _parent = AssetDatabase.LoadAssetAtPath<StateMachine>(path);
                 }
+
                 return _parent;
             }
         }
+
         public override void OnInspectorGUI()
         {
             var t = target as State;
+            EditorGUILayout.BeginHorizontal();
             string rename = EditorGUILayout.DelayedTextField("Name", t.name);
+            if (GUILayout.Button("x", GUILayout.Width(18)))
+            {
+                string path = AssetDatabase.GetAssetPath(t);
+                AssetDatabase.RemoveObjectFromAsset(t);
+                AssetDatabase.ImportAsset(path);
+            }
+
+            EditorGUILayout.EndHorizontal();
             if (rename != t.name)
             {
                 t.name = rename;
@@ -55,9 +67,10 @@ namespace elZach.Common
                 AssetDatabase.ImportAsset(AssetDatabase.GetAssetPath(parent));
                 AssetDatabase.Refresh();
             }
+
             DrawDefaultInspector();
         }
     }
-    
+
 #endif
 }
