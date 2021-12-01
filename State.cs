@@ -53,6 +53,7 @@ namespace elZach.Common
             if (GUILayout.Button("x", GUILayout.Width(18)))
             {
                 string path = AssetDatabase.GetAssetPath(t);
+                AssetDatabase.LoadAssetAtPath<StateMachine>(path).states.Remove(t);
                 AssetDatabase.RemoveObjectFromAsset(t);
                 AssetDatabase.ImportAsset(path);
             }
