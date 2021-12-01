@@ -63,7 +63,7 @@ namespace elZach.Common
         public bool EnterState(State state)
         {
             var toCheck = current;
-            var link = toCheck.links.FirstOrDefault(x => x.target == state);
+            var link = toCheck?.links?.FirstOrDefault(x => x.target == state);
             if (link == null || !link.condition.Invoke()) return false;
             ForceState(state, true);
             return true;
