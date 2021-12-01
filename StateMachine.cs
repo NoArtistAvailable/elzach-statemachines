@@ -78,7 +78,7 @@ namespace elZach.Common
         
 #if UNITY_EDITOR
         public Button<StateMachine> addStateButton = new Button<StateMachine>(x => x.AddNewState());
-        public void AddNewState()
+        public virtual void AddNewState()
         {
             var state = CreateInstance<State>();
             if (states == null) states = new List<State>();

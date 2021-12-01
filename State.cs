@@ -24,7 +24,7 @@ namespace elZach.Common
     
 #if UNITY_EDITOR
 
-    [CustomEditor(typeof(State))]
+    [CustomEditor(typeof(State),true)]
     public class StateEditor : Editor
     {
         private StateMachine _parent;
