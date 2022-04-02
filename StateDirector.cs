@@ -42,7 +42,7 @@ namespace elZach.Common
             {
                 var originalStateMachine = stateMachine;
                 stateMachine = Instantiate(stateMachine);
-                originalStateMachine.name = name;
+                stateMachine.name = originalStateMachine.name;
                 for (int i = 0; i < stateMachine.states.Count; i++)
                 {
                     var state = stateMachine.states[i];
